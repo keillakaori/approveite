@@ -1,99 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Blank App</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-
 <body class="imgdesp">
+	
+<!--Header-->
+<header class="gradviolet">
+	
+	<img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
+	<img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
+	
+</header>
+	
+<!--MENU-->
+<div id="myNav" class="overlay gradpivi">
+<div class="overlay-content">
+	<img src="img/logos/logo_negativo.png" class="logomenu" alt="logo-approveite" />
 
-    <!--Header-->
-    <header class="gradviolet">
+	<ul>
+		<li><a href="#"><img src="img/icon/icone_home.png" /><br>Home</a></li>
+		<li><a href="#"><img src="img/icon/icone_despensa.png" /><br>Despensa</a></li>
+		<li><a href="receitas.html"><img src="img/icon/icone_receitas.png" /><br>Receitas</a></li>
+	</ul><br>
 
-        <img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
-        <img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
+		<a href="#" class="menusmall"><img src="img/icon/icone_notificacoes.png" />Notificações</a>
+		<a href="direitos.html" class="menusmall"><img src="img/icon/icone_direitos.png" />Termos e condições</a>
+		<a href="sobre_nos.html" class="menusmall"><img src="img/icon/icone_sobre_nos.png" />Sobre nós</a>
+		<a href="#" class="menusmall"><img src="img/icon/icone_contato.png" />Fale conosco</a>
+		<a href="#" class="menusmall"><img src="img/icon/icone_sair.png" />Sair</a>
 
-    </header>
+		<img src="img/icon/botao_fechar_branco.png" class="closebtn" onclick="closeNav()" />
+</div>
+</div>
 
-    <!--MENU-->
-    <div id="myNav" class="overlay gradpivi">
-        <div class="overlay-content">
-            <img src="img/logos/logo_negativo.png" class="logomenu" alt="logo-approveite" />
+<div id="card">
+	<h1> MEU ESPAÇO </h1>
+</div>
 
-            <ul>
-                <li><a href="index.html"><img src="img/icon/icone_home.png" /><br>Home</a></li>
-                <li><a href="despensa.html"><img src="img/icon/icone_despensa.png" /><br>Despensa</a></li>
-                <li><a href="receitas.html"><img src="img/icon/icone_receitas.png" /><br>Receitas</a></li>
-            </ul><br>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 
-            <a href="#" class="menusmall"><img src="img/icon/icone_notificacoes.png" />Notificações</a>
-            <a href="direitos.html" class="menusmall"><img src="img/icon/icone_direitos.png" />Termos e condições</a>
-            <a href="sobre_nos.html" class="menusmall"><img src="img/icon/icone_sobre_nos.png" />Sobre nós</a>
-            <a href="#" class="menusmall"><img src="img/icon/icone_contato.png" />Fale conosco</a>
-            <a href="#" class="menusmall"><img src="img/icon/icone_sair.png" />Sair</a>
-
-            <img src="img/icon/botao_fechar_branco.png" class="closebtn" onclick="closeNav()" />
-        </div>
-    </div>
-
-    <div id="card">
-        <h1>Login</h1>
-        <div id="login" data-role="page">
-            <br><br>
-            <div align="center"> <strong>Tela de Login</strong></div>
-            <br><br>
-            <form id="formLogin">
-                <input id="email" name="email" type="email" placeholder="email" /><br>
-                <input id="senha" name="senha" type="password" placeholder="senha" />
-
-                <br>
-                <button type="submit" data-theme="b">Entrar</button>
-            </form>
-        </div>
-        <div id="resultado"></div>
-    </div>
-
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script>
-        $("#formLogin").submit(function(e) {
-            e.preventDefault();
-
-            $.ajax({
-                type: "POST",
-                url: "http://gabesdev.com.br/gabesdev/app/script.php",
-
-                data: {
-                    acao: 'login',
-                    email: $("#email").val(),
-                    senha: $("#senha").val()
-                },
-
-                async: false,
-                dataType: "json",
-
-                success: function(json) {
-                    if (json.result == true) {
-                        //redireciona o usuario para pagina
-                        $("#resultado").html("Login efetuado com sucesso! <br> Bem vindo ao approveite, " + json.dados.nome);
-
-                    } else {
-                        $("#resultado").html(json.msg);
-                        alert(json.msg);
-                    }
-                },
-                error: function(xhr, e, t) {
-                    console.log(xhr.responseText);
-                    $("#resultado").html("Erro com o banco de dados.");
-                }
-            });
-        });
-
-    </script>
 </body>
-
 </html>

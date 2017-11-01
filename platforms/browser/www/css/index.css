@@ -18,10 +18,11 @@
 * {margin: 0 auto;}
 
 body {
+font-family: 'Open Sans', sans-serif;
 font-size: 1em;
 text-align: center;
+color: 
 overflow: hidden;
-font-family: 'Open Sans', sans-serif;
 }
 
 .fundo{width: 100%; height: 100%; position: fixed;}
@@ -31,6 +32,14 @@ font-family: 'Open Sans', sans-serif;
 .gradviolet {background: linear-gradient(to right, #C048A4 , #8847AA) fixed;}
 .gradpink {background: linear-gradient(to right, #FF3D70 , #FF1E48) fixed;}
 .gradgreen {background: linear-gradient(to right, #42F53C , #22E06A) fixed;}
+
+/*Textos*/
+h1 {font-family: Titillium-Bold; font-size: 1.7em; padding: 0.5em;}
+h2 {font-family: Titillium-Bold; font-size: 1.4em; padding: 0.5em;}
+
+p {padding: 0.5em 1em; text-align: left;}
+
+.left {text-align: left;}
 
 /*Header fixo*/
 header {
@@ -61,7 +70,7 @@ header {
     padding: 0.8em;
 	margin-right: 50%;
 	margin-top: 1em;
-	height: 3em;
+	width: 3em;
 }
 
 .overlay {
@@ -110,7 +119,7 @@ ul li a img {height: 2em;}
 div#card {
 	width: 87%;
 	height: 100%;
-	background-color: #ffffff;
+	background-color: #fcfafa;
 	border-radius: 2em;
 	box-shadow: 0 1em 1em 0.2em rgba(0, 0, 0, 0.2);
 	position: fixed;
@@ -202,45 +211,32 @@ input[type="checkbox"] { transform: scale(1.3);}
 	background-color: #fff;
 	border-radius: 0.25em;
 	padding: 0 0.25em;
-	}
-
-/*Textos*/
-h1, h2 {font-family: Titillium-Bold; padding: 0.5em; text-align: left;}
-
-p {padding: 0.5em 1em; text-align: left;}
-
-.centro {text-align: center;}
+}
 
 /*Receitas*/
-.slide { height:100%;}
-
-div#wrapper {
-  height:100%;
-  position: absolute;
-  top: 0px; left: 0px;
-  z-index: 3;
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	-ms-transition: all 250ms ease;
-	-o-transition: all 250ms ease;
-	transition: all 250ms ease;
+#dot {
+	position: fixed;
+	right: 41%;
+	bottom: 0;
+	-webkit-transform:translatex(-50%);
+	transform:translatex(-50%);
+	z-index: 1;
 }
 
-.animate {
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s;
-}
+#dot li {position: relative; width: 1em;}
+#dot li a {display:inline-block; width: 0.8em; height: 0.8em; background: black; border-radius: 50%;}
+#dot li.on a {background: linear-gradient(to right, #C048A4 , #8847AA) fixed;}
 
-div.float-left { float: left;}
-
-div.screen { 
-	height: 90%; width: 100%;
+#swipe-receita {
 	position: absolute;
-	overflow: hidden;
-	border-radius: 1em;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 85%;
+	visibility: hidden;
 }
 
-#rec1 { width: 50% !important;}
+#rec1 { width: 50% !important; overflow: hidden !important;}
 #modo1 { width: 50% !important;}
 .photocard {width: 100%; height: 100%; border-radius: 2em;}
 
@@ -251,16 +247,15 @@ div.screen {
 	border-radius: 0.5em;
 	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
 	position: absolute;
-	bottom: 4%;
+	bottom: 0;
 }
 
 .preparo {
 	width: 100%;
-	height: 90%;
-	overflow: auto;
-	
+	height: 92%;
+	overflow-y: auto;
 }
 
 table {	width: 100%;}
-th, td { font-size: small; padding: 0 0.25em;}
-td img {height: 2.25em;}
+th, td { font-size: small; padding: 0 0.25em; margin-bottom: 0;}
+td img {height: 2.3em;}

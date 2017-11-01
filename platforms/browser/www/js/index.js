@@ -97,77 +97,37 @@ function myFunction() {
 });
 
 /*RECEITAS*/
-var card = document.getElementById('card');
-var wrapper = document.getElementById('wrapper');
-var slideLength = $(".slide").length;
-
-// Calculate wrapper and individual slide with
-// relative to the parent (box model ftw)
-$(wrapper).css("width", slideLength * 100 + "%");
-/*$(".slide")
-.each(function(index) {
-  $(this).css("width", 100 / slideLength + "%");
-});*/
-$(".slide")
-.each(function(index) {
-  //Might have to repeat this one on window resize?
-  $(this).css("width", ($("#wrapper").width()) / slideLength + "px");
+$(function() {
+    new Dragend($("#swipe-receita").get(0), {
+    afterInitialize: function() {
+        $("#swipe-receita").css("visibility", "visible");
+}
+});
 });
 
-var offsetX = 0;
-var snapPosition = 0;
+/*RECEITAS - INDICADORES*/
+var dot = $("#dot > ul > li");
+var contents = $("#swipe-receita > div");
 
-function snap_to(offset) {
+$(window).scroll(function(){
+  var wScroll = $(this).scrollLeft();
   
-  var difference;
-  var minimumDiff;
-  var slideWidth = $(".slide:first-child").width();
-  var snap;
-
-  // Of all possible snap values, find out which is the closest 
-  // to current offset 
-  for (var i = 0; i < $(".slide").length; i++) {
-    // Calculate the discrepancy between offset and possible snap loc.
-    difference = Math.abs(offset - (0 - i * slideWidth));
-    //console.log($("#wrapper").width());
-
-    // Finds out if there is a better difference
-    if (minimumDiff === undefined || difference < minimumDiff) {
-      minimumDiff = difference;
-      snap = (0 - i * slideWidth);
-    }
+  if(wScroll>200){
+    $("#dot").addClass("on");
+  } else if(wScroll==0){
+    $("#dot").removeClass("on");
   }
-
-  return snap;
-};
-
-var swipeChecker = false;
-
-/*var swipeHandler = new Hammer(card);
-swipeHandler.get("swipe").set({ direction: Hammer.DIRECTION_VERTICAL });
-swipeHandler
-.on("swipe", function(ev) {
-  console.log("swipe"); 
-})
-.on("swipeup", function(ev) {  
-  alert("up");
-})
-.on("swipedown", function(ev) {
-  alert("down");
-});*/
-
-var panHandler = new Hammer(card);
-panHandler.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-panHandler
-.on("panleft panright", function(ev) {
-  //ev.preventDefault();
-  offsetX = snapPosition + ev.deltaX;
-
-  $(wrapper).css('-webkit-transform', 'translate3d(' + offsetX + 'px,0px,0px)');
-  $(wrapper).css('transform', 'translate3d(' + offsetX + 'px,0px,0px)');
-})
-.on("panend", function(ev) {
-    $(wrapper).addClass('animate');
-    snapPosition = snap_to(offsetX);  
-    $(wrapper).css('-webkit-transform', 'translate3d(' + snapPosition + 'px, 0px, 0px)')
+  
+  if(wScroll >= contents.eq(0).offset().left){
+    dot.removeClass('on');
+    dot.eq(0).addClass('on');
+    dot.removeClass('on');
+    dot.eq(0).addClass('on');
+  }
+  if(wScroll >= contents.eq(1).offset().left){
+    dot.removeClass('on');
+    dot.eq(1).addClass('on');
+    dot.removeClass('on');
+    dot.eq(1).addClass('on');
+  }
 });
