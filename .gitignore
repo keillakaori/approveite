@@ -1,0 +1,15 @@
+platforms/
+
+# IntelliJ IDEA files
+*.iml
+.idea
+
+#windows
+Thumbs.db
+Desktop.ini
+
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
