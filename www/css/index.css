@@ -1,0 +1,261 @@
+@font-face {
+     font-family: 'Open Sans';
+     src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+@font-face {
+     font-family: 'OpenSans-Italic';
+     src: url('../fonts/Open_Sans/OpenSans-Italic.ttf');
+}
+@font-face {
+     font-family: 'Titillium';
+	 src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+}
+@font-face {
+     font-family: 'Titillium-Bold';
+	 src: url('../fonts/Titillium_Web/TitilliumWeb-Bold.ttf');
+}
+
+* {margin: 0 auto;}
+
+body {
+font-family: 'Open Sans', sans-serif;
+font-size: 1em;
+text-align: center;
+color: 
+overflow: hidden;
+}
+
+.fundo{width: 100%; height: 100%; position: fixed;}
+
+.imgdesp {background: url("../img/bg_banana.png") no-repeat fixed; background-size: cover;}
+.gradpivi {background: linear-gradient(to right, #FF3D70 , #8847AA) fixed;}
+.gradviolet {background: linear-gradient(to right, #C048A4 , #8847AA) fixed;}
+.gradpink {background: linear-gradient(to right, #FF3D70 , #FF1E48) fixed;}
+.gradgreen {background: linear-gradient(to right, #42F53C , #22E06A) fixed;}
+
+/*Textos*/
+h1 {font-family: Titillium-Bold; font-size: 1.7em; padding: 0.5em;}
+h2 {font-family: Titillium-Bold; font-size: 1.4em; padding: 0.5em;}
+
+p {padding: 0.5em 1em; text-align: left;}
+
+.left {text-align: left;}
+
+/*Header fixo*/
+header {
+	position: fixed; 
+	width: 150%;
+	margin-left: -25%;	
+	height: 8em; 
+	border-bottom-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+}
+	
+.logoheader {
+	width: 12em; 
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.back {position: absolute; top: 1.8em; left: 20%;}
+.back  img {height: 2.5em;}
+
+/*Menu*/
+.logomenu {margin-top: 5%; height: 6em;}
+
+.openmenu {
+	display: inline-block;
+    padding: 0.8em;
+	margin-right: 50%;
+	margin-top: 1em;
+	width: 3em;
+}
+
+.overlay {
+    height: 0%;
+    width: 200%;
+	margin-left: -50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	box-shadow: 0 1em 1em 0 rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
+    transition: 0.5s;
+	border-bottom-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+}
+
+.overlay-content {
+    position: relative;
+    width: 50%;
+	height: 100%;
+}
+
+.overlay a {
+    padding: 0.35em;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    bottom: 1%;
+	right: 42.5%;
+	height: 3em;
+}
+
+ul {list-style:none; display: table; margin-top: 1.5em; padding-left: 0; width: 100%;}
+ul li{position: relative; float:left; font-size: 1.2em; width: 33%; font-family: Titillium-Bold;}
+ul li a img {height: 2em;}
+.menusmall {text-align: left; font-size: 1.2em; margin-left: 20%; font-family: Titillium;}
+.menusmall img {height: 1em; padding-right: 0.5em;}
+
+/*Card*/
+div#card {
+	width: 87%;
+	height: 100%;
+	background-color: #fcfafa;
+	border-radius: 2em;
+	box-shadow: 0 1em 1em 0.2em rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 6em;
+	margin-left: 6.5%;
+}
+
+div#scroll {width: 100%; height: 70%; overflow: auto;}
+
+/*Search receitas*/
+#search {width: 95%; height: 3.5em; margin: 1em 0.5em;}
+
+#popup {
+	width: 4.3em;
+	height: 100%;
+	background: transparent url('../img/icon/botao_filtro.png') no-repeat;
+	background-size: 100%;
+	float: left;
+	border: none;
+}
+
+#filter {
+	display: none;
+	z-index: 2;
+	width: 100%;
+	height: 18em;
+	position: absolute;
+	top: 5%;
+	left: 0;
+	border-radius: 1em;
+	background-color: #fff;
+	box-shadow: 0 0 20em 0 rgba(0, 0, 0, 1);
+}
+
+#closepop {
+	width: 3em;
+	height: 3em;
+	background: transparent url('../img/icon/botao_fechar.png') no-repeat;
+	background-size: 100%;
+	border: none;
+	position: absolute;
+	top: 2%;
+	left: 0.5em;
+}
+
+#clean {
+	background: transparent; 
+	border: none;
+	position: absolute;
+	bottom: 5%;
+	left: 0.5em;
+	font-family: OpenSans-Italic;
+	font-size: 1.2em;
+}
+
+#demo img {width: 2.8em; position: absolute; bottom: 4%; right: 42%;}
+
+label {padding: 0 1em; display: table-cell;}
+input[type="checkbox"] { transform: scale(1.3);}
+
+#txtBusca{
+  background: transparent url('../img/icon/icone_pesquisa.png') no-repeat right;
+  background-size: 1.8em;
+  border:none;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  width: 72%;
+  height:100%;
+  padding-left: 0.6em;
+  font-size: 1.5em;
+}
+  
+/*Galeria receitas*/
+#galeria {width: 95%; height: 70%; margin: 1em 0.5em; overflow: auto;}
+#galeria img {z-index: -1; width: 100%; height: 100%; border-radius: 0.5em;}
+
+.imgS {width: 100%; height: 6em; position: relative; padding-bottom: 0.5em;}
+.imgM {width: 100%; height: 9em; position: relative; padding-bottom: 0.5em;}
+
+.tag {display: none;}
+
+.titulo {
+	z-index: 1;
+	position: absolute;
+	left: 3%;
+	bottom: 10%;
+	font-family: Titillium-Bold;
+	font-size: 1.2em;
+	background-color: #fff;
+	border-radius: 0.25em;
+	padding: 0 0.25em;
+}
+
+/*Receitas*/
+#dot {
+	position: fixed;
+	right: 41%;
+	bottom: 0;
+	-webkit-transform:translatex(-50%);
+	transform:translatex(-50%);
+	z-index: 1;
+}
+
+#dot li {position: relative; width: 1em;}
+#dot li a {display:inline-block; width: 0.8em; height: 0.8em; background: black; border-radius: 50%;}
+#dot li.on a {background: linear-gradient(to right, #C048A4 , #8847AA) fixed;}
+
+#swipe-receita {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 85%;
+	visibility: hidden;
+}
+
+#rec1 { width: 50% !important; overflow: hidden !important;}
+#modo1 { width: 50% !important;}
+.photocard {width: 100%; height: 100%; border-radius: 2em;}
+
+.tituloB {
+	background-color: #fff;
+	width: 50%;
+	height: 7em;
+	border-radius: 0.5em;
+	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+	position: absolute;
+	bottom: 0;
+}
+
+.preparo {
+	width: 100%;
+	height: 92%;
+	overflow-y: auto;
+}
+
+table {	width: 100%;}
+th, td { font-size: small; padding: 0 0.25em; margin-bottom: 0;}
+td img {height: 2.3em;}

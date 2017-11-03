@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Blank App</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	
+<!--Header-->
+<header class="gradviolet">
+	
+	<img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
+	<img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
+	
+</header>
+	
+<!--MENU-->
+<div id="myNav" class="overlay gradpivi">
+<div class="overlay-content">
+	<img src="img/logos/logo_negativo.png" class="logomenu" alt="logo-approveite" />
+
+	<ul>
+		<li><a href="#"><img src="img/icon/icone_home.png" /><br>Home</a></li>
+		<li><a href="#"><img src="img/icon/icone_despensa.png" /><br>Despensa</a></li>
+		<li><a href="receitas.html"><img src="img/icon/icone_receitas.png" /><br>Receitas</a></li>
+	</ul><br>
+
+		<a href="#" class="menusmall"><img src="img/icon/icone_notificacoes.png" />Notificações</a>
+		<a href="direitos.html" class="menusmall"><img src="img/icon/icone_direitos.png" />Termos e condições</a>
+		<a href="sobre_nos.html" class="menusmall"><img src="img/icon/icone_sobre_nos.png" />Sobre nós</a>
+		<a href="#" class="menusmall"><img src="img/icon/icone_contato.png" />Fale conosco</a>
+		<a href="#" class="menusmall"><img src="img/icon/icone_sair.png" />Sair</a>
+
+		<img src="img/icon/botao_fechar_branco.png" class="closebtn" onclick="closeNav()" />
+</div>
+</div>
+
+<!--Conteudo-->
+<div id="card">
+
+<div id="search">
+
+	<button type="button" onclick="abrePopup()" id="popup"></button>
+	<div id="filter">
+		<br><h1 class="centro">Filtrar receitas</h1>
+
+	<form>
+	<button onclick="document.getElementById('filter').style.display='none';" type="reset" id="closepop"></button>
+	
+		<label><input type="checkbox" name="fl-colour" value="vegetariano" id="vegetariano" /> Vegetariano </label>
+		<label><input type="checkbox" name="fl-colour" value="vegano" id="vegano" /> Vegano </label><br>
+		<label><input type="checkbox" name="fl-colour" value="hipolactasia" id="hipolactasia" /> Hipolactasia </label>
+		<label><input type="checkbox" name="fl-colour" value="celiaco" id="celiaco" /> Celíaco </label><br>
+		<label><input type="checkbox" name="fl-colour" value="bebida" id="bebida" /> Bebida </label>
+		<label><input type="checkbox" name="fl-colour" value="doce" id="doce" /> Doce </label>
+		<label><input type="checkbox" name="fl-colour" value="salgado" id="salgado" /> Salgado </label><br>
+
+	<button type="reset" id="clean">Limpar</button>
+	<a href="#" onclick="document.getElementById('filter').style.display='none';" id="demo"><img src="img/icon/botao_check.png" /></a>
+	</form>
+	</div>
+
+	<input type="text" id="txtBusca" placeholder="Buscar..."/>
+</div>
+
+<div id="galeria">
+
+	<div class="imgS categoria" data-category="vegetariano bebida">
+	<span class="tag"> banana morango mamao</span>
+	<a href="comida.html#rec1"><img src="img/image_02.jpg" /></a>
+	<span class="titulo"> Salada de frutas </span>
+	</div>
+		
+	<div class="imgM categoria" data-category="lactose salgado">
+	<span class="tag"> kiwi caqui uva</span>
+	<a href="#"><img src="img/image_01.jpg" /></a>
+	<span class="titulo"> Salada de frutas </span>
+	</div>
+		
+	<div class="imgS categoria" data-category="vegano doce">
+	<span class="tag"> laranja uva melancias</span>
+	<a href="#"><img src="img/image_02.jpg" /></a>
+	<span class="titulo"> Salada de frutas </span>
+	</div>
+
+</div>	
+</div>
+
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+
+</body>
+</html>
