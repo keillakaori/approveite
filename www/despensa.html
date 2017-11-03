@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Approveite</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body class="imgdesp">
-	
-<!--Header-->
-<header class="gradviolet">
-	
-	<img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
-	<img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
-	
-</header>
-	
-<!--MENU-->
-<div id="myNav" class="overlay gradpivi"></div>
 
- <div id="card">
+<body class="imgdesp">
+
+    <!--Header-->
+    <header class="gradviolet">
+
+        <img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
+        <img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
+
+    </header>
+
+    <!--MENU-->
+    <div id="myNav" class="overlay gradpivi"></div>
+
+    <div id="card">
         <h1>Inserir item</h1>
         <div id="despensa" data-role="page">
             <br><br>
             <div align="center"> <strong>Tela de despensa</strong></div>
-            <br><br>
-            <form id="formLogin">
-                <input id="nome" name="nome" type="text" placeholder="nome" /><br>
-                <input id="email" name="email" type="email" placeholder="email" /><br>
-                <input id="senha" name="senha" type="password" placeholder="senha" />
+            <br><br> Se estiver logado, verá essa página. Se não, a de login.
 
-                <br>
-                <button type="submit" data-theme="b">Cadastrar</button>
+            <form id="formDespensa">
+                <select name="ingredientes" id="ingredientes">
+                    
+                </select>
             </form>
         </div>
         <div id="resultado"></div>
     </div>
 
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        /* 
+*/
+    </script>
 
 </body>
+
 </html>

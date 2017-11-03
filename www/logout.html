@@ -23,17 +23,16 @@
     <div id="myNav" class="overlay gradpivi"></div>
 
     <div id="card">
+        <h1 id="testeNovo">Login</h1>
 
+        <div id="resultado"></div>
     </div>
 
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script>
-        $(funtion() {
-
-            localStorage.removeItem('user');
-            window.location = "index.html"
-        });
+        localStorage.removeItem('user')
+        $("#testeNovo").text(localStorage.getItem('user'));
 
     </script>
 
