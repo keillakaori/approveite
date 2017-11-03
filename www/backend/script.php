@@ -35,6 +35,7 @@ switch ($request['acao']) {
             
             $arr['result'] = true;
             $arr['dados']['nome'] = $obj->nome;
+            $arr['dados']['id'] = $obj->id;
         }else{
             $arr['result'] = false;
             $arr['msg'] = "E-mail ou senha incorreto";
@@ -59,6 +60,7 @@ switch ($request['acao']) {
             $query = "INSERT INTO usuario (nome, email, senha) VALUES ('{$nome}', '{$email}', '{$senha}')";
             $result = $Mysqli->query($query);
             $arr['result'] = true;
+            $arr['dados']['id'] = $Mysqli->insert_id;
             $arr['dados']['nome'] = $nome;
         }else{
             $arr['result'] = false;

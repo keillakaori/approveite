@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Approveite</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body class="imgdesp">
+
+    <!--Header-->
+    <header class="gradviolet">
+
+        <img src="img/logos/logo_tipografico_negativo.png" class="logoheader" alt="logo-approveite" />
+        <img src="img/icon/botao_menu.png" onclick="openNav()" class="openmenu" />
+
+    </header>
+
+    <!--MENU-->
+    <div id="myNav" class="overlay gradpivi"></div>
+
+    <div id="card">
+
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        $(funtion() {
+
+            localStorage.removeItem('user');
+            window.location = "index.html"
+        });
+
+    </script>
+
+</body>
+
+</html>
